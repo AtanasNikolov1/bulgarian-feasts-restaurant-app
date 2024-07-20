@@ -2,14 +2,14 @@ import styles from "./Header.module.css";
 
 function Header() {
   return (
-    <header className="bg-lightGray flex items-center justify-between px-9 py-1.5">
+    <header className="flex items-center justify-between bg-lightGray px-9 py-1.5">
       <img
         src="./images/logo-transparent.png"
         alt="logo"
         className="h-20 pl-10 pr-40"
       />
       <nav className={`pt-0.5 ${styles.mainNav}`}>
-        <ul className="flex-column text-lightBlack font-bod text-2lg flex gap-10">
+        <ul className="flex-column flex gap-10 text-lg font-bold text-lightBlack">
           <li className="relative">
             <a href="#">Home</a>
           </li>
@@ -26,15 +26,15 @@ function Header() {
       </nav>
       <nav>
         <ul className="flex-column flex items-center gap-8">
-          <li className="hover:text-grayBackground duration-450 rounded-xl border-2 border-customOrange px-4 py-2 text-base font-bold uppercase text-customOrange transition-colors ease-in-out hover:cursor-pointer hover:bg-customOrange">
+          <li className="rounded-xl border-2 border-customOrange px-4 py-2 text-base font-bold uppercase text-customOrange transition-colors duration-450 ease-in-out hover:cursor-pointer hover:bg-customOrange hover:text-lightGray">
             <a href="#">Book a table</a>
           </li>
-          <li className="hover:text-grayBackground duration-450 rounded-2xl p-2 text-3xl text-customOrange transition-all ease-in-out hover:cursor-pointer hover:rounded-2xl hover:bg-customOrange">
+          <li className="rounded-2xl p-2 text-3xl text-customOrange transition-all duration-450 ease-in-out hover:cursor-pointer hover:rounded-2xl hover:bg-customOrange hover:text-lightGray">
             <a href="#">
               <i className="fa-solid fa-cart-shopping"></i>
             </a>
           </li>
-          <li className="hover:text-grayBackground duration-450 rounded-2xl p-2 text-3xl text-customOrange transition-all ease-in-out hover:cursor-pointer hover:rounded-2xl hover:bg-customOrange">
+          <li className="rounded-2xl p-2 text-3xl text-customOrange transition-all duration-450 ease-in-out hover:cursor-pointer hover:rounded-2xl hover:bg-customOrange hover:text-lightGray">
             <a href="#">
               <i className="fa-solid fa-user"></i>
             </a>
