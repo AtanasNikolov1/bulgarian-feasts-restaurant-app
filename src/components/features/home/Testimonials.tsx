@@ -29,7 +29,7 @@ function Testimonials() {
   ];
 
   return (
-    <section className="mx-auto w-full overflow-hidden px-5 py-10 text-center font-headings font-semibold text-stormGray">
+    <section className="mx-auto w-full overflow-hidden px-5 py-10 text-center font-headings font-semibold text-lightBlack">
       <h2 className="text-5xl">What Our Customers Are Saying</h2>
       <div className="mx-auto mb-12 mt-6 h-1 w-52 bg-customOrange"></div>
 
