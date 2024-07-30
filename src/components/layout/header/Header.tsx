@@ -1,5 +1,5 @@
 import MenuNav from "../../ui/menuNav/MenuNav";
-import UserNav from "../../ui/UserNav";
+import UserNav from "../../ui/userNav/UserNav";
 import useScrollPosition from "../../../hooks/useScrollPosition";
 import darkLogo from "../../../assets/images/dark-logo.png";
 import lightLogo from "../../../assets/images/light-logo.png";
