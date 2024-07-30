@@ -3,11 +3,13 @@ import Home from "../pages/Home";
 import Menu from "../pages/Menu";
 import MenuItemDetails from "../pages/MenuItemDetails";
 import Header from "../components/layout/header/Header";
+import Footer from "../components/layout/footer/Footer";
 
 const Layout = () => (
   <div>
     <Header />
     <Outlet />
+    <Footer />
   </div>
 );
 
