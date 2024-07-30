@@ -17,7 +17,7 @@ function OurBenefits() {
         Why Choose Us?
       </h3>
       <ul className="flex justify-center gap-20 pb-10 text-lg font-medium">
-        {benefits.map((benefit, i) => (
+        {benefits.map((benefit) => (
           <li className="basis-1/6" key={benefit.text}>
             <img
               src={benefit.icon}
