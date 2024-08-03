@@ -46,3 +46,22 @@ export const register = async ({
   return { success: true, message: "Registration successful!" };
 };
 
+export const login = async (email, password) => {
+  if (!email || !password) {
+    return { success: false, message: "Missing fields" };
+  }
+
+  const { data: signInData, error: signInError } =
+    await supabase.auth.signInWithPassword({
+      email: email,
+      password: password,
+    });
+
+  if (signInError) {
+    return { success: false, message: signInError.message };
+  }
+
+  const user = signInData.user;
+
+  return { success: true, user: user };
+};
