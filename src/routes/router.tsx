@@ -5,6 +5,7 @@ import MenuItemDetails from "../pages/MenuItemDetails";
 import Header from "../components/layout/header/Header";
 import Footer from "../components/layout/footer/Footer";
 import RegisterPage from "../pages/RegisterPage";
+import LoginPage from "../pages/LoginPage";
 
 const Layout = () => (
   <div>
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <RegisterPage />,
+      },
+      {
+        path: "/login",
+        element: <LoginPage />,
       },
     ],
   },
