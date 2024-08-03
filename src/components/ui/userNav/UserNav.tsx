@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { logout } from "../../../services/authService";
 
 const userIcons = [
   { icon: "cart-shopping", path: "/cart" },
@@ -6,6 +8,16 @@ const userIcons = [
 ];
 
 const UserNav = () => {
+  const handleLogout = async () => {
+    const result = await logout();
+
+    if (result.success) {
+      navigate("/login");
+    } else {
+      alert(`Logout failed: ${result.message}`);
+    }
+  };
+
   return (
     <nav>
       <ul className="flex-column flex items-center gap-8">
@@ -22,6 +34,12 @@ const UserNav = () => {
             </Link>
           </li>
         ))}
+          <button
+            onClick={handleLogout}
+            className="rounded-2xl p-2 text-3xl text-customOrange transition-all duration-450 ease-in-out hover:cursor-pointer hover:rounded-2xl hover:bg-customOrange hover:text-lightGray"
+          >
+            <i className="fa-solid fa-right-from-bracket"></i>
+          </button>
       </ul>
     </nav>
   );
