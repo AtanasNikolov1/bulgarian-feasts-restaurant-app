@@ -83,3 +83,16 @@ export const logout = async () => {
   }
 };
 
+export const isAuthenticated = async () => {
+  const {
+    data: { session },
+    error,
+  } = await supabase.auth.getSession();
+
+  if (error) {
+    console.error("Error getting session:", error.message);
+    return false;
+  }
+
+  return !!session;
+};
