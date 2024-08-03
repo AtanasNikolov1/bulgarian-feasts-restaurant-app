@@ -65,3 +65,21 @@ export const login = async (email, password) => {
 
   return { success: true, user: user };
 };
+
+export const logout = async () => {
+  try {
+    const { error } = await supabase.auth.signOut();
+
+    if (error) {
+      throw new Error(error.message);
+    }
+
+    localStorage.removeItem("userData");
+
+    return { success: true };
+  } catch (error) {
+    console.error("Logout error:", error);
+    return { success: false, message: error.message };
+  }
+};
+
