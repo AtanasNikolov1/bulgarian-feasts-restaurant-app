@@ -11,7 +11,10 @@ const AboutLinks = () => {
       <h3 className="mb-4 text-xl font-medium">About</h3>
       <ul>
         {aboutLinks.map((link) => (
-          <li className="mb-2 transition-colors duration-200 hover:cursor-pointer hover:text-customOrange">
+          <li
+            key={link.text}
+            className="mb-2 transition-colors duration-200 hover:cursor-pointer hover:text-customOrange"
+          >
             <p>{link.text}</p>
           </li>
         ))}
