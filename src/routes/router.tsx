@@ -1,11 +1,13 @@
 import { createBrowserRouter, Outlet } from "react-router-dom";
-import Home from "../pages/Home";
 import Menu from "../pages/Menu";
+import Home from "../pages/HomePage";
 import MenuItemDetails from "../pages/MenuItemDetails";
 import Header from "../components/layout/header/Header";
 import Footer from "../components/layout/footer/Footer";
 import RegisterPage from "../pages/RegisterPage";
 import LoginPage from "../pages/LoginPage";
+import { AuthProvider } from "../context/AuthContext";
+import ScrollToTop from "../components/layout/ScrollToTop";
 
 const Layout = () => (
   <div>
@@ -13,6 +15,13 @@ const Layout = () => (
     <Outlet />
     <Footer />
   </div>
+  <AuthProvider>
+    <div>
+      <ScrollToTop />
+      <Outlet />
+      <Footer />
+    </div>
+  </AuthProvider>
 );
 
 const router = createBrowserRouter([
