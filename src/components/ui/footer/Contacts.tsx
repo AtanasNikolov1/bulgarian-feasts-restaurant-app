@@ -9,7 +9,7 @@ const Contacts = () => {
       <h3 className="mb-4 text-xl font-medium">Contact Us</h3>
       <ul>
         {contacts.map((contact) => (
-          <li className="mb-4 flex">
+          <li key={contact.icon} className="mb-4 flex">
             <i className={`fa-solid fa-${contact.icon} mr-4 text-2xl`}></i>
             <p className="self-center">{contact.text}</p>
           </li>

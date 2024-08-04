@@ -18,7 +18,7 @@ const PaymentMethods = () => {
       <p className="mb-4 text-lg font-semibold">We accept Payment methods:</p>
       <ul className="flex flex-row gap-2">
         {paymentMethods.map((method) => (
-          <li>
+          <li key={method.alt}>
             <img src={method.src} alt={method.alt} className="w-16" />
           </li>
         ))}

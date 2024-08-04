@@ -9,7 +9,10 @@ const SocialMediaLinks = () => {
   return (
     <div className="mb-4 flex gap-6 text-3xl">
       {socialMediaLinks.map((link) => (
-        <p className="transition-colors duration-200 hover:cursor-pointer hover:text-customOrange">
+        <p
+          key={link.icon}
+          className="transition-colors duration-200 hover:cursor-pointer hover:text-customOrange"
+        >
           <i className={`fa-brands fa-${link.icon}`}></i>
         </p>
       ))}
