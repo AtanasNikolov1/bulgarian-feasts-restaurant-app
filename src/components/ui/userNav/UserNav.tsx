@@ -21,7 +21,7 @@ const UserNav = () => {
   return (
     <nav>
       <ul className="flex-column flex items-center gap-8">
-        <li className="rounded-xl border-2 border-customOrange px-4 py-2 text-base font-bold uppercase text-customOrange transition-colors duration-450 ease-in-out hover:cursor-pointer hover:bg-customOrange hover:text-lightGray">
+        <li className="relative -top-[100px] rounded-xl border-2 border-customOrange px-4 py-2 text-base font-bold uppercase text-customOrange transition-colors duration-450 ease-in-out hover:cursor-pointer hover:bg-customOrange hover:text-lightGray">
           <a href="#">Book a table</a>
         </li>
         {userIcons.map((icon) => (
