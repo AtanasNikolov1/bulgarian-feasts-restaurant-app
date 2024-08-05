@@ -36,7 +36,7 @@ const UserNav = () => {
         ))}
         {!user && (
           <li className="rounded-2xl p-2 text-3xl text-customOrange transition-all duration-450 ease-in-out hover:cursor-pointer hover:rounded-2xl hover:bg-customOrange hover:text-lightGray">
-            <Link to="login">
+            <Link to="/login">
               <i className={`fa-solid fa-user`}></i>
             </Link>
           </li>
