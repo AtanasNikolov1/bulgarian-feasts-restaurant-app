@@ -9,11 +9,6 @@ import { AuthProvider } from "../context/AuthContext";
 import ScrollToTop from "../components/layout/ScrollToTop";
 
 const Layout = () => (
-  <div>
-    <Header />
-    <Outlet />
-    <Footer />
-  </div>
   <AuthProvider>
     <div>
       <ScrollToTop />
