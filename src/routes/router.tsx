@@ -1,8 +1,7 @@
 import { createBrowserRouter, Outlet } from "react-router-dom";
-import Menu from "../pages/Menu";
 import Home from "../pages/HomePage";
+import Menu from "../pages/MenuPage";
 import MenuItemDetails from "../pages/MenuItemDetails";
-import Header from "../components/layout/header/Header";
 import Footer from "../components/layout/footer/Footer";
 import RegisterPage from "../pages/RegisterPage";
 import LoginPage from "../pages/LoginPage";
