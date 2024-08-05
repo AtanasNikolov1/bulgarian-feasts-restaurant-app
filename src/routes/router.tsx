@@ -6,6 +6,7 @@ import Footer from "../components/layout/footer/Footer";
 import RegisterPage from "../pages/RegisterPage";
 import LoginPage from "../pages/LoginPage";
 import { AuthProvider } from "../context/AuthContext";
+import AddReviewPage from "../pages/AddReviewPage";
 import ScrollToTop from "../components/layout/ScrollToTop";
 
 const Layout = () => (
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/menu/:id",
         element: <MenuItemDetails />,
+      },
+      {
+        path: "menu/:id/reviews/add",
+        element: <AddReviewPage />,
       },
       {
         path: "/register",
