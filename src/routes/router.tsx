@@ -7,6 +7,7 @@ import RegisterPage from "../pages/RegisterPage";
 import LoginPage from "../pages/LoginPage";
 import { AuthProvider } from "../context/AuthContext";
 import AddReviewPage from "../pages/AddReviewPage";
+import EditReviewPage from "../pages/EditReviewPage";
 import ScrollToTop from "../components/layout/ScrollToTop";
 
 const Layout = () => (
@@ -40,6 +41,11 @@ const router = createBrowserRouter([
         path: "menu/:id/reviews/add",
         element: <AddReviewPage />,
       },
+      {
+        path: "menu/:id/reviews/edit/:reviewId",
+        element: <EditReviewPage />,
+      },
+
       {
         path: "/register",
         element: <RegisterPage />,
