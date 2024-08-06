@@ -11,6 +11,8 @@ import AddReviewPage from "../pages/AddReviewPage";
 import EditReviewPage from "../pages/EditReviewPage";
 import ScrollToTop from "../components/layout/ScrollToTop";
 import PageNotFound from "../pages/PageNotFound";
+import RequireAuth from "../guards/RequireAuth";
+import RedirectIfAuthenticated from "../guards/RedirectIfAuthenticated";
 
 const Layout = () => (
   <AuthProvider>
@@ -40,25 +42,44 @@ const router = createBrowserRouter([
         element: <MenuItemDetails />,
       },
       {
-        path: "menu/:id/reviews/add",
-        element: <AddReviewPage />,
+        path: "/menu/:id/reviews/add",
+        element: (
+          <RequireAuth>
+            <AddReviewPage />
+          </RequireAuth>
+        ),
       },
       {
-        path: "menu/:id/reviews/edit/:reviewId",
-        element: <EditReviewPage />,
+        path: "/menu/:id/reviews/edit/:reviewId",
+        element: (
+          <RequireAuth>
+            <EditReviewPage />
+          </RequireAuth>
+        ),
       },
 
       {
         path: "/register",
-        element: <RegisterPage />,
+        element: (
+          <RedirectIfAuthenticated>
+            <RegisterPage />
+          </RedirectIfAuthenticated>
+        ),
       },
       {
         path: "/login",
-        element: <LoginPage />,
+        element: (
+          <RedirectIfAuthenticated>
+            <LoginPage />
+          </RedirectIfAuthenticated>
+        ),
+      },
       {
         path: "/cart",
         element: (
+          <RequireAuth>
             <CartPage />
+          </RequireAuth>
         ),
       },
         path: "*",
