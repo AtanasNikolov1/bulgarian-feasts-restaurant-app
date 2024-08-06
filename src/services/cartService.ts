@@ -1,6 +1,6 @@
 import supabase from "../config/supabaseClient";
 
-export const addToCart = async (menuItemId, quantity) => {
+export const addToCart = async (menuItemId, quantity, price) => {
   // Get user ID from local storage
   const userData = localStorage.getItem("userData");
   const { id, email } = JSON.parse(userData);
@@ -48,6 +48,7 @@ export const addToCart = async (menuItemId, quantity) => {
       quantity: quantity,
       created_at: new Date().toISOString(),
       email: email,
+      price: price,
     });
 
     if (insertError) {
@@ -58,3 +59,28 @@ export const addToCart = async (menuItemId, quantity) => {
   }
 };
 
+export const updateCartItem = async (id, quantity) => {
+  const { error } = await supabase
+    .from("cart")
+    .update({ quantity })
+    .eq("id", id);
+
+  if (error) {
+    console.error("Error updating cart item:", error.message);
+    return false;
+  }
+
+  return true;
+};
+
+// Delete cart item
+export const deleteCartItem = async (id) => {
+  const { error } = await supabase.from("cart").delete().eq("id", id);
+
+  if (error) {
+    console.error("Error deleting cart item:", error.message);
+    return false;
+  }
+
+  return true;
+};

@@ -12,7 +12,7 @@ const Item = ({ item }) => {
     if (!user) {
       return navigate("/login");
     }
-    addToCart(item.id, 1);
+    addToCart(item.id, 1, item.price);
     setPopup({ visible: true, name: item.name, quantity: 1 });
   };
 
