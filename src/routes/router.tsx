@@ -6,6 +6,7 @@ import Footer from "../components/layout/footer/Footer";
 import RegisterPage from "../pages/RegisterPage";
 import LoginPage from "../pages/LoginPage";
 import { AuthProvider } from "../context/AuthContext";
+import CartPage from "../pages/CartPage";
 import AddReviewPage from "../pages/AddReviewPage";
 import EditReviewPage from "../pages/EditReviewPage";
 import ScrollToTop from "../components/layout/ScrollToTop";
@@ -54,6 +55,12 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <LoginPage />,
+      {
+        path: "/cart",
+        element: (
+            <CartPage />
+        ),
+      },
         path: "*",
         element: <PageNotFound />,
       },
