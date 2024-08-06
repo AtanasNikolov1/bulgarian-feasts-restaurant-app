@@ -9,6 +9,7 @@ import { AuthProvider } from "../context/AuthContext";
 import AddReviewPage from "../pages/AddReviewPage";
 import EditReviewPage from "../pages/EditReviewPage";
 import ScrollToTop from "../components/layout/ScrollToTop";
+import PageNotFound from "../pages/PageNotFound";
 
 const Layout = () => (
   <AuthProvider>
@@ -53,6 +54,8 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <LoginPage />,
+        path: "*",
+        element: <PageNotFound />,
       },
     ],
   },

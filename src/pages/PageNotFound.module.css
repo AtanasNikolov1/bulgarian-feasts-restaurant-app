@@ -1,0 +1,65 @@
+.body {
+  background: #ececee;
+  height: 100vh;
+  background-size: 400%;
+}
+
+.errorPage {
+  position: absolute;
+  top: 10%;
+  left: 17%;
+  right: 17%;
+  bottom: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.errorPage .content {
+  max-width: 600px;
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 18vw;
+  line-height: 1em;
+  color: #ff8000;
+}
+
+.content h4 {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #000;
+  max-width: 600px;
+  font-size: 2em;
+}
+
+.content p {
+  font-size: 1.2em;
+  color: #0d0d0d;
+}
+
+.content .btns {
+  margin: 25px 0;
+  display: inline-flex;
+}
+
+.content .btns a {
+  display: inline-block;
+  margin: 0 10px;
+  text-decoration: none;
+  border: 2px solid #ff8000;
+  color: #ff8000;
+  font-weight: 500;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.content .btns a:hover {
+  color: #fff;
+  background: #ff8000;
+}
