@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import supabase from "../../../config/supabaseClient";
 import { addToCart } from "../../../services/cartService";
+import { useAuth } from "../../../context/AuthContext";
 
 const ItemDetails = () => {
+  const [popup, setPopup] = useState({ visible: false, name: "", quantity: 0 });
   const [item, setItem] = useState({});
   const [quantity, setQuantity] = useState(1);
   const { id } = useParams();
+  const { user } = useAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchDetails = async () => {
@@ -26,11 +30,36 @@ const ItemDetails = () => {
   }, []);
 
   const handleAddToCart = () => {
-    addToCart(item.id, quantity); // Call the function to add item to cart with quantity 1
+    if (!user) {
+      return navigate("/login");
+    }
+    addToCart(item.id, quantity);
+    setPopup({ visible: true, name: item.name, quantity: quantity });
   };
+
+  const decreasingQuantity = (quantity) => {
+    if (quantity <= 1) return;
+
+    setQuantity((q) => q - 1);
+  };
+
+  useEffect(() => {
+    if (popup.visible) {
+      const timer = setTimeout(() => {
+        setPopup({ visible: false, name: "", quantity: 0 });
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [popup.visible]);
 
   return (
     <div className="mx-auto max-w-6xl p-5">
+      {popup.visible && (
+        <div className="fixed bottom-2 right-2 z-50 m-4 rounded-lg bg-green-500 p-4 text-lg text-white shadow-lg">
+          Successfully added {popup.quantity} {popup.name} to your cart!
+        </div>
+      )}
       <div className="flex gap-20">
         <div className="basis-1/3">
           <img
@@ -59,7 +88,7 @@ const ItemDetails = () => {
             <div>
               <button
                 className="rounded-l-lg bg-lightBlack px-3.5 py-2.5 text-snow"
-                onClick={() => setQuantity((q) => q - 1)}
+                onClick={() => decreasingQuantity(quantity)}
               >
                 -
               </button>
