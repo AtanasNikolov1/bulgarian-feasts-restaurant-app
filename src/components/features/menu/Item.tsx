@@ -9,7 +9,6 @@ const Item = ({ item }) => {
   const navigate = useNavigate();
 
   const handleAddToCart = () => {
-    console.log(user);
     if (!user) {
       return navigate("/login");
     }
