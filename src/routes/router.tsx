@@ -11,6 +11,7 @@ import AddReviewPage from "../pages/AddReviewPage";
 import EditReviewPage from "../pages/EditReviewPage";
 import ScrollToTop from "../components/layout/ScrollToTop";
 import PageNotFound from "../pages/PageNotFound";
+import AboutPage from "../pages/AboutPage";
 import RequireAuth from "../guards/RequireAuth";
 import RedirectIfAuthenticated from "../guards/RedirectIfAuthenticated";
 
@@ -82,6 +83,11 @@ const router = createBrowserRouter([
           </RequireAuth>
         ),
       },
+      {
+        path: "/about",
+        element: <AboutPage />,
+      },
+      {
         path: "*",
         element: <PageNotFound />,
       },
