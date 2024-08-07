@@ -61,12 +61,14 @@ const CommentsSection = () => {
           No Reviews
         </h3>
         ;
-        <Link
-          to={`/menu/${id}/reviews/add`}
-          className="m-auto block w-36 rounded-2xl border-2 border-lightBlack bg-lightBlack py-2.5 text-center text-lg font-bold text-snow transition-colors duration-200 hover:bg-snow hover:text-lightBlack"
-        >
-          Add Review
-        </Link>
+        {user && (
+          <Link
+            to={`/menu/${id}/reviews/add`}
+            className="m-auto block w-36 rounded-2xl border-2 border-lightBlack bg-lightBlack py-2.5 text-center text-lg font-bold text-snow transition-colors duration-200 hover:bg-snow hover:text-lightBlack"
+          >
+            Add Review
+          </Link>
+        )}
       </>
     );
   }
