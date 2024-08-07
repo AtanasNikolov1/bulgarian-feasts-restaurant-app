@@ -14,6 +14,8 @@ import PageNotFound from "../pages/PageNotFound";
 import AboutPage from "../pages/AboutPage";
 import RequireAuth from "../guards/RequireAuth";
 import RedirectIfAuthenticated from "../guards/RedirectIfAuthenticated";
+import ContactUsForm from "../components/features/contactUs/ContactUsForm";
+import ContactUs from "../pages/ContactUs";
 
 const Layout = () => (
   <AuthProvider>
@@ -86,6 +88,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <AboutPage />,
+      },
+      {
+        path: "/contact",
+        element: <ContactUs />,
       },
       {
         path: "*",
